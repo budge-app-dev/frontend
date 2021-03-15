@@ -33,27 +33,108 @@ export default function Login() {
 
     }
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
-                <label> Username:
-                    <input
-                    type="text"
-                    name="username"
-                    value={loginVal.username}
-                    onChange={handleChanges}>
-                    </input>
-                </label>
-                <label> Password:
-                    <input 
-                    type="password"
-                    name="password"
-                    value={loginVal.password}
-                    onChange={handleChanges}>
-                    </input>
-                </label>
-                <button>Login</button>
-            </form>
-        </div>
+        <Page>
+            <Container>
+                <h1>BUDGE</h1>
+                <FormContainer className="formContainer">
+                    <h3>Log In</h3>
+                    <form onSubmit={handleLogin}>
+                        <label>
+                            <input
+                            type="text"
+                            name="username"
+                            value={loginVal.username}
+                            onChange={handleChanges}
+                            placeholder="Username">
+                            </input>
+                        </label>
+                        <label>
+                            <input 
+                            type="password"
+                            name="password"
+                            value={loginVal.password}
+                            onChange={handleChanges}
+                            placeholder="Password">
+                            </input>
+                        </label>
+                        <div className="btn">
+                        <Button>Login</Button>
+                        </div>
+                    </form>
+                </FormContainer>
+            </Container>
+        </Page>
     )
 }
+
+const Page= styled.div`
+display: flex;
+justify-content:center;
+height:100vh;
+align-items: center;
+`
+
+const Container = styled.div`
+background: #FFFFFF;
+box-shadow: 0px 30px 60px -40px rgba(31, 38, 23, 0.5);
+border-radius: 10px;
+
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+position: absolute;
+width: 30%;
+    h1{
+        width:100%;
+        background: #FFFFFF;
+    }
+    h3{
+        width:100%;
+        background: #FFFFFF;
+        color: #535358;
+        line-height: 24px;
+        margin-top: -1%;
+    }
+    
+    form{
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+        background: #FFFFFF;
+    }
+    label{
+        background: #FFFFFF;
+    }
+    input{
+        width: 74%;
+        margin:1%;
+        padding: 1%;
+        background: #F7F7F7;
+        color: #000000; 
+        border: none;
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+        padding: 1%;
+        background: #FFFFFF;
+    }
+    
+`
+const FormContainer= styled.div`
+
+        background: #FFFFFF;
+        width: 100%;
+        margin-bottom: 4%;
+`
+
+const Button= styled.button`
+    background: #1387F2;
+    color: #FFFFFF;
+    border-radius: 3px;
+    width: 80%;
+    border: none;
+    padding: 1%;
+    `
+    
