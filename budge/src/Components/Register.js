@@ -96,13 +96,17 @@ width: 30%;
     h1{
         width:100%;
         background: #FFFFFF;
+        font-size: 1.4rem;
+        padding: 3%;
+        margin: 1% auto;
+        color: #604AE4;
     }
     h3{
         width:100%;
         background: #FFFFFF;
         color: #535358;
         line-height: 24px;
-        margin-top: -1%;
+        margin: 3% auto;
     }
     
     form{
@@ -110,13 +114,14 @@ width: 30%;
         flex-direction: column;
         width: 100%;
         background: #FFFFFF;
+        margin:1% auto;
     }
     label{
         background: #FFFFFF;
     }
     input{
         width: 74%;
-        margin:1%;
+        margin:2%;
         padding: 1%;
         background: #F7F7F7;
         color: #000000; 
@@ -129,7 +134,6 @@ width: 30%;
         padding: 1%;
         background: #FFFFFF;
     }
-    
 `
 const FormContainer= styled.div`
 
