@@ -1,4 +1,7 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
+import axios from 'axios'
+import styled from 'styled-components'
 
 const initLoginVal = {
     username: '',
@@ -7,6 +10,7 @@ const initLoginVal = {
 
 export default function Login() {
     const [loginVal, setLoginVal]=useState(initLoginVal);
+    const history = useHistory();
 
     const handleChanges = e =>{
         setLoginVal({
@@ -14,10 +18,24 @@ export default function Login() {
         })
     }
 
+    const handleLogin = e => {
+        e.preventDefault();
+        axios.post('http://localhost:5000/api/users/login', loginVal)
+        // axios.post("https://reqres.in/api/users", newUser)
+        .then((resp)=>{
+            console.log(resp)
+            setLoginVal(initLoginVal)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        history.push('/')
+
+    }
     return (
         <div>
             <h1>Login</h1>
-            <form>
+            <form onSubmit={handleLogin}>
                 <label> Username:
                     <input
                     type="text"
@@ -26,6 +44,15 @@ export default function Login() {
                     onChange={handleChanges}>
                     </input>
                 </label>
+                <label> Password:
+                    <input 
+                    type="password"
+                    name="password"
+                    value={loginVal.password}
+                    onChange={handleChanges}>
+                    </input>
+                </label>
+                <button>Login</button>
             </form>
         </div>
     )

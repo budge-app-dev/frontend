@@ -4,13 +4,23 @@ import {Route, Switch} from 'react-router-dom'
 
 //Components
 import Login from './Components/Login'
+import Register from './Components/Register'
+import LandingPage from './Components/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <Route path="/login">
-          <Login/>
-      </Route>
+      <Switch>
+        <Route path="/login">
+            <Login/>
+        </Route>
+        <Route path="/register">
+          <Register/>
+        </Route>
+        <Route path="/">
+          <LandingPage/>
+        </Route>
+      </Switch>
     </div>
   );
 }
