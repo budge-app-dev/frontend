@@ -1,16 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import {Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 
 //Components
 import Login from './Components/Login'
+import Categories from './Components/setup/Categories'
 
 function App() {
   return (
     <div className="App">
-      <Route path="/login">
-          <Login/>
-      </Route>
+      <Router>
+        <Switch>
+          {/* <Route path="/login" component={Login} /> */}
+          <Route path="/login" component={Categories} />
+        </Switch>
+      </Router>
     </div>
   );
 }
