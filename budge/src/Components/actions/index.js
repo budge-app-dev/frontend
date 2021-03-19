@@ -23,3 +23,15 @@ export const getCategories = () => (dispatch) => {
 export const addCategory = category => {
     return({type:ADD_CAT, payload: category});
 }
+
+//PROGRESS
+export const INCREMENT = "INCREMENT_BAR"; 
+export const DECREMENT = "DECREMENT_BAR"; 
+
+export const increment = () => {
+    return({type: INCREMENT})
+}
+
+export const decrement = () => {
+    return({type: DECREMENT})
+}

@@ -1,11 +1,12 @@
-import { GET_CAT_SUCCESS, GET_CAT_FAIL, ADD_CAT } from '../actions'
+import { GET_CAT_SUCCESS, GET_CAT_FAIL, ADD_CAT, INCREMENT, DECREMENT } from '../actions'
 
 export const initialState = { 
     categories: [], 
     userCat: [],
     totalBudget: 0, 
     income: 0,
-    error:''
+    error:'',
+    progress: 0
 }
 
 export const reducer = (state= initialState, action) => {
@@ -24,6 +25,16 @@ export const reducer = (state= initialState, action) => {
         return({
             ...state, 
             userCat: [...state.userCat, action.payload]
+        })
+        case(INCREMENT):
+        return({
+            ...state, 
+            progress: state.progress + 1
+        })
+        case(DECREMENT):
+        return({
+            ...state, 
+            progress: state.progress - 1
         })
         default:
             return state
