@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getCategories } from "../actions";
+import { getCategories, addCategory } from "../actions";
 import Progress from "./progress";
 
 const messages = [
@@ -12,14 +12,19 @@ const messages = [
   { h1: "Other Finances", h2: "Are you building up a savings? Portfolio?", h3: "You're almost finished..." },
 ];
 
-function Button({ category }) {
-  return <button key={category.category_id}>{category.category_name}</button>;
-}
 
-function Categories({ categories, getCategories, progress }) {
+function Categories({ categories, getCategories, progress, addCategory }) {
   useEffect(() => {
     getCategories();
   }, []);
+
+  function Button({ category }) {
+    const handleClick=() => {
+      addCategory(category)
+    }
+    return <button onClick={handleClick} key={category.category_id}>{category.category_name}</button>;
+  }
+
   return (
     <div className="categories-wrapper">
       <div className="categories categories-setup">
@@ -54,4 +59,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getCategories })(Categories);
+export default connect(mapStateToProps, { getCategories, addCategory })(Categories);
