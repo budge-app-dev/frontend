@@ -3,15 +3,15 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 
 //Components
 import Login from './Components/Login'
-import Categories from './Components/setup/Categories'
+import Categories from './Components/setup/categories'
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          {/* <Route path="/login" component={Login} /> */}
-          <Route path="/login" component={Categories} />
+          <Route path="/login" component={Login} />
+          <Route path="/" component={Categories} />
         </Switch>
       </Router>
     </div>
