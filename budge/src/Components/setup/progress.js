@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 function ProgressMobileStepper() {
   const classes = useStyles();
   const theme = useTheme();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [activeStep, setActiveStep] = React.useState(0);
   const handleNext = () => { 
