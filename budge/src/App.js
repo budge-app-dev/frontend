@@ -7,12 +7,14 @@ import Categories from './Components/setup/categories'
 import Register from  './Components/Register'
 import LandingPage from './Components/LandingPage'
 import IncomePage from './Components/IncomePage';
+import SetBudge from './Components/SetBudge'
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/setBudge" component={SetBudge}/>
           <Route path="/income" component={IncomePage}/>
           <Route path="/register" component={Register}/>
           <Route path="/categories" component={Categories}/>
