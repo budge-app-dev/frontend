@@ -6,13 +6,15 @@ import Login from './Components/Login'
 import Categories from './Components/setup/categories'
 import Register from  './Components/Register'
 import LandingPage from './Components/LandingPage'
+import IncomePage from './Components/IncomePage';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/register" component={Register}/>
+          <Route path="/income" component={IncomePage}/>
+          <Route path="/register" component={Register}/>
           <Route path="/categories" component={Categories}/>
           <Route path="/login" component={Login} />
           <Route path="/" component={LandingPage} />
