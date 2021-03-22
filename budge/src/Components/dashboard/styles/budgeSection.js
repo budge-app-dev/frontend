@@ -90,4 +90,80 @@ export const Container = styled.div`
   div.logoutDiv {
     margin-top: 300%;
   }
+
+  section.dailySpendSection {
+    width: 90%;
+    text-align: left;
+    margin-left: 5%;
+  }
+
+  h1.dailySpend {
+    font-size: 2rem;
+    color: #2a7de1;
+  }
+
+  div.dailySpendTopDiv {
+    display: flex;
+  }
+
+  button.saveDailySpend {
+    width: 12%;
+    height: 2vh;
+    border-radius: 12px;
+    border: none;
+    background-color: #2a7de1;
+    color: #ffffff;
+    margin-top: 2%;
+    margin-left: 70%;
+  }
+
+  div.welcomeSpend {
+    display: flex;
+  }
+
+  h2.whatDidYouSpend {
+    color: #2a7de1;
+  }
+
+  h3.date {
+    margin-top: 1.3%;
+    margin-left: 0.6%;
+    color: #604ae4;
+  }
+
+  p.leftoverBalance {
+    color: #604ae4;
+  }
+
+  input.leftoverBalanceInput {
+    background-color: #f4f6f7;
+    border: none;
+    height: 2vh;
+    width: 15%;
+  }
+  p.categories {
+    color: #604ae4;
+    font-size: 1.5rem;
+  }
+
+  p.remainingBalance {
+    color: #2a7de1;
+    margin-top: 0%;
+  }
+
+  div.categoriesDiv {
+    display: flex;
+    align-items: center;
+  }
+
+  input.amountInput {
+    height: 2vh;
+    margin-left: 1%;
+    background-color: #f7f7f7;
+    border: none;
+  }
+
+  div.categoriesMainDiv {
+    /* margin-top: 5%; */
+  }
 `;

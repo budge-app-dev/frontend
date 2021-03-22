@@ -27,6 +27,78 @@ function dateChanger(day) {
   return dateChanger();
 }
 
+function monthChanger(month) {
+  if (month === 1) {
+    return 'Jan';
+  } else if (month === 2) {
+    return 'Feb';
+  } else if (month === 3) {
+    return 'March';
+  } else if (month === 4) {
+    return 'April';
+  } else if (month === 5) {
+    return 'May';
+  } else if (month === 6) {
+    return 'June';
+  } else if (month === 7) {
+    return 'July';
+  } else if (month === 8) {
+    return 'Aug';
+  } else if (month === 9) {
+    return 'Sept';
+  } else if (month === 10) {
+    return 'Oct';
+  } else if (month === 11) {
+    return 'Nov';
+  } else if (month === 12) {
+    return 'Dec';
+  }
+  return monthChanger();
+}
+
+const dummyCategories = [
+  {
+    category_id: 1,
+    category: 'Groceries',
+    totalBudget: 100,
+  },
+  {
+    category_id: 2,
+    category: 'Going out',
+    totalBudget: 100,
+  },
+  {
+    category_id: 3,
+    category: 'Rent',
+    totalBudget: 100,
+  },
+  {
+    category_id: 4,
+    category: 'Car',
+    totalBudget: 100,
+  },
+  {
+    category_id: 5,
+    category: 'Food',
+    totalBudget: 100,
+  },
+  {
+    category_id: 6,
+    category: 'investments',
+    totalBudget: 100,
+  },
+  {
+    category_id: 7,
+    category: 'savings',
+    totalBudget: 100,
+  },
+  {
+    category_id: 8,
+    category: 'cleaning',
+    totalBudget: 100,
+  },
+];
+
 function budgeSection() {
   return (
     <Container>
@@ -54,22 +126,46 @@ function budgeSection() {
             {/* closes div.separator2 */}
           </div>{' '}
           {/* closes div.separatorDiv */}
-          {/* <section>
-           <h1>My Daily Spend</h1>
-           <h2>Hi Bob, what did you spend today?</h2>
-           <h3>
-             {dateChanger(day)} ,{month}, {date}, {year}
-           </h3>
-         </section> */}
-          <section class='mainSection'>
+          <section class='dailySpendSection'>
+            <div class='dailySpendTopDiv'>
+              <h1 class='dailySpend'>My Daily Spend</h1>
+              <button class='saveDailySpend'>Save Changes</button>
+            </div>
+            {/* closes div.dailySpendTopDiv */}
+
+            <div class='welcomeSpend'>
+              <h2 class='whatDidYouSpend'>Hi Bob, what did you spend today?</h2>
+              <h3 class='date'>
+                {dateChanger(day)}, {monthChanger(month)} {date}, {year}
+              </h3>
+            </div>
+            {/* closes div.welcomeSpend */}
+
+            <p class='leftoverBalance'>Leftover Monthly Balance</p>
+            <input class='leftoverBalanceInput' placeholder='$--' />
+
+            {dummyCategories.map((category) => (
+              <div key={category.category_id} class='categoriesMainDiv'>
+                <div class='categoriesDiv'>
+                  <p class='categories'>{category.category}</p>
+                  <input placeholder='Enter amount...' class='amountInput' />
+                </div>
+
+                <p class='remainingBalance'>
+                  Remaining balance: {category.totalBudget}
+                </p>
+              </div>
+            ))}
+          </section>
+          {/* <section class='mainSection'>
             <div class='mainSectionDiv'>
               <h1 class='myBudge'>My Budge</h1>
               <h2 class='leftMoney'>Money I have left this month</h2>
               <input placeholder='$--'></input>
             </div>
             {/* closes div.mainSectionDiv */}
-            {/* Bar graph */}
-            <div class='barGraph'>
+          {/* Bar graph */}
+          {/* <div class='barGraph'>
               <Bar
                 data={{
                   labels: ['Groceries', 'Rent', 'Car', 'Phone'],
@@ -102,7 +198,7 @@ function budgeSection() {
               />
             </div>
             {/* closes div.barGraph */}
-          </section>
+          {/* </section> */}
           {/* closes section.mainSection*/}
         </div>
       </section>
