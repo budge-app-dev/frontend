@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container } from './styles/budgeSection';
 import { Bar } from 'react-chartjs-2';
+// import { useHistory } from 'react-router-dom';
 
 let newDate = new Date();
 let date = newDate.getDate();
-let month = newDate.getMonth() + 1;
+let month = newDate.getMonth();
 let year = newDate.getFullYear();
 let day = newDate.getDay();
 
@@ -27,7 +28,88 @@ function dateChanger(day) {
   return dateChanger();
 }
 
-function budgeSection() {
+function monthChanger(month) {
+  if (month === 1) {
+    return 'Jan';
+  } else if (month === 2) {
+    return 'Feb';
+  } else if (month === 3) {
+    return 'March';
+  } else if (month === 4) {
+    return 'April';
+  } else if (month === 5) {
+    return 'May';
+  } else if (month === 6) {
+    return 'June';
+  } else if (month === 7) {
+    return 'July';
+  } else if (month === 8) {
+    return 'Aug';
+  } else if (month === 9) {
+    return 'Sept';
+  } else if (month === 10) {
+    return 'Oct';
+  } else if (month === 11) {
+    return 'Nov';
+  } else if (month === 12) {
+    return 'Dec';
+  }
+  return monthChanger();
+}
+
+const dummyCategories = [
+  {
+    category_id: 1,
+    category: 'Groceries',
+    totalBudget: 100,
+  },
+  {
+    category_id: 2,
+    category: 'Going out',
+    totalBudget: 100,
+  },
+  {
+    category_id: 3,
+    category: 'Rent',
+    totalBudget: 100,
+  },
+  {
+    category_id: 4,
+    category: 'Car',
+    totalBudget: 100,
+  },
+  {
+    category_id: 5,
+    category: 'Food',
+    totalBudget: 100,
+  },
+  {
+    category_id: 6,
+    category: 'investments',
+    totalBudget: 100,
+  },
+  {
+    category_id: 7,
+    category: 'savings',
+    totalBudget: 100,
+  },
+  {
+    category_id: 8,
+    category: 'cleaning',
+    totalBudget: 100,
+  },
+];
+
+function BudgeSection() {
+  // let history = useHistory();
+
+  // function handleBudge() {
+  //   history.push('/dashboard');
+  // }
+
+  // function handleDailySpend() {
+  //   history.push('/daily-spend');
+  // }
   return (
     <Container>
       <section class='leftSideSection'>
@@ -38,37 +120,57 @@ function budgeSection() {
               Log Out
             </a>
           </div>
-          {/* closes div.logout */}
         </div>
-        {/* closes div.leftSideDiv */}
 
         <div class='mainTopDiv'>
           <div class='separatorDiv'>
-            <div class='separator1'>
+            <button class='separator1'>
               <p class='separatorText'>Budge</p>
-            </div>
-            {/* closes div.separator1 */}
-            <div class='separator2'>
+            </button>
+            <button class='separator2'>
               <p class='separatorText'>Daily Spend</p>
-            </div>{' '}
-            {/* closes div.separator2 */}
-          </div>{' '}
-          {/* closes div.separatorDiv */}
-          {/* <section>
-           <h1>My Daily Spend</h1>
-           <h2>Hi Bob, what did you spend today?</h2>
-           <h3>
-             {dateChanger(day)} ,{month}, {date}, {year}
-           </h3>
-         </section> */}
+            </button>
+          </div>
+          {/* <section class='dailySpendSection'>
+            <div class='dailySpendTopDiv'>
+              <h1 class='dailySpend'>My Daily Spend</h1>
+              <button class='saveDailySpend'>Save Changes</button>
+            </div>
+
+            <div class='welcomeSpend'>
+              <h2 class='whatDidYouSpend'>Hi Bob, what did you spend today?</h2>
+              <h3 class='date'>
+                {dateChanger(day)}, {monthChanger(month)} {date}, {year}
+              </h3>
+            </div>
+
+            <p class='leftoverBalance'>Leftover Monthly Balance</p>
+            <input class='leftoverBalanceInput' placeholder='$--' />
+
+            <section class='catSec'>
+              {dummyCategories.map((category) => (
+                <div key={category.category_id} class='categoriesMainDiv'>
+                  <div class='categoriesDiv'>
+                    <p class='categories'>{category.category}</p>
+                    <input placeholder='Enter amount...' class='amountInput' />
+                  </div>
+
+                  <p class='remainingBalance'>
+                    Remaining balance: {category.totalBudget}
+                  </p>
+                </div>
+              ))}
+            </section> */}
+          {/* </section> */}
           <section class='mainSection'>
             <div class='mainSectionDiv'>
               <h1 class='myBudge'>My Budge</h1>
               <h2 class='leftMoney'>Money I have left this month</h2>
-              <input placeholder='$--'></input>
+              <div class='moneyLeftDiv'>
+                <p class='moneyLeftP'>$--</p>
+              </div>
             </div>
-            {/* closes div.mainSectionDiv */}
-            {/* Bar graph */}
+
             <div class='barGraph'>
               <Bar
                 data={{
@@ -101,13 +203,11 @@ function budgeSection() {
                 }}
               />
             </div>
-            {/* closes div.barGraph */}
           </section>
-          {/* closes section.mainSection*/}
         </div>
       </section>
     </Container>
   );
 }
 
-export default budgeSection;
+export default BudgeSection;
