@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   h2.welcomeMessage {
     color: #2a7de1;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 0.5%;
     padding-top: 12%;
   }
@@ -18,7 +18,7 @@ export const Container = styled.div`
     display: flex;
   }
 
-  div.separator1 {
+  button.separator1 {
     display: flex;
     align-items: center;
     background-color: #2a7de1;
@@ -26,9 +26,10 @@ export const Container = styled.div`
     width: 60%;
     border-radius: 10px;
     color: #ffffff;
+    border: none;
   }
 
-  div.separator2 {
+  button.separator2 {
     display: flex;
     align-items: center;
     background-color: #d9eaff;
@@ -36,6 +37,7 @@ export const Container = styled.div`
     width: 60%;
     border-radius: 10px;
     color: #2a7de1;
+    border: none;
   }
 
   div.separatorDiv {
@@ -62,13 +64,13 @@ export const Container = styled.div`
   }
 
   h1.myBudge {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #2a7de1;
     margin-top: 0%;
   }
 
   h2.leftMoney {
-    font-size: 0.6rem;
+    font-size: 1rem;
     color: #2a7de1;
   }
 
@@ -84,7 +86,7 @@ export const Container = styled.div`
 
   a.logout {
     text-decoration: none;
-    font-size: 0.6rem;
+    font-size: 1.2rem;
     color: #604ae4;
   }
   div.logoutDiv {
@@ -126,7 +128,8 @@ export const Container = styled.div`
   }
 
   h3.date {
-    margin-top: 1.3%;
+    display: flex;
+    align-items: center;
     margin-left: 0.6%;
     color: #604ae4;
   }
@@ -141,29 +144,51 @@ export const Container = styled.div`
     height: 2vh;
     width: 15%;
   }
+
+  div.moneyLeftDiv {
+    height: 2.8vh;
+    width: 40%;
+    background-color: #f4f6f7;
+  }
+
   p.categories {
     color: #604ae4;
     font-size: 1.5rem;
+    width: 80%;
+    text-align: left;
   }
 
   p.remainingBalance {
     color: #2a7de1;
     margin-top: 0%;
+    height: 2vh;
   }
 
   div.categoriesDiv {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
 
   input.amountInput {
-    height: 2vh;
-    margin-left: 1%;
+    height: 2.5vh;
     background-color: #f7f7f7;
     border: none;
+    width: 60%;
   }
 
   div.categoriesMainDiv {
-    /* margin-top: 5%; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 20%;
+  }
+  section.catSec {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    width: 100%;
+    flex-wrap: wrap;
   }
 `;

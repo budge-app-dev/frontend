@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './styles/budgeSection';
 import { Bar } from 'react-chartjs-2';
+// import { useHistory } from 'react-router-dom';
 
 let newDate = new Date();
 let date = newDate.getDate();
@@ -99,7 +100,16 @@ const dummyCategories = [
   },
 ];
 
-function budgeSection() {
+function BudgeSection() {
+  // let history = useHistory();
+
+  // function handleBudge() {
+  //   history.push('/dashboard');
+  // }
+
+  // function handleDailySpend() {
+  //   history.push('/daily-spend');
+  // }
   return (
     <Container>
       <section class='leftSideSection'>
@@ -110,28 +120,22 @@ function budgeSection() {
               Log Out
             </a>
           </div>
-          {/* closes div.logout */}
         </div>
-        {/* closes div.leftSideDiv */}
 
         <div class='mainTopDiv'>
           <div class='separatorDiv'>
-            <div class='separator1'>
+            <button class='separator1'>
               <p class='separatorText'>Budge</p>
-            </div>
-            {/* closes div.separator1 */}
-            <div class='separator2'>
+            </button>
+            <button class='separator2'>
               <p class='separatorText'>Daily Spend</p>
-            </div>{' '}
-            {/* closes div.separator2 */}
-          </div>{' '}
-          {/* closes div.separatorDiv */}
-          <section class='dailySpendSection'>
+            </button>
+          </div>
+          {/* <section class='dailySpendSection'>
             <div class='dailySpendTopDiv'>
               <h1 class='dailySpend'>My Daily Spend</h1>
               <button class='saveDailySpend'>Save Changes</button>
             </div>
-            {/* closes div.dailySpendTopDiv */}
 
             <div class='welcomeSpend'>
               <h2 class='whatDidYouSpend'>Hi Bob, what did you spend today?</h2>
@@ -139,33 +143,35 @@ function budgeSection() {
                 {dateChanger(day)}, {monthChanger(month)} {date}, {year}
               </h3>
             </div>
-            {/* closes div.welcomeSpend */}
 
             <p class='leftoverBalance'>Leftover Monthly Balance</p>
             <input class='leftoverBalanceInput' placeholder='$--' />
 
-            {dummyCategories.map((category) => (
-              <div key={category.category_id} class='categoriesMainDiv'>
-                <div class='categoriesDiv'>
-                  <p class='categories'>{category.category}</p>
-                  <input placeholder='Enter amount...' class='amountInput' />
-                </div>
+            <section class='catSec'>
+              {dummyCategories.map((category) => (
+                <div key={category.category_id} class='categoriesMainDiv'>
+                  <div class='categoriesDiv'>
+                    <p class='categories'>{category.category}</p>
+                    <input placeholder='Enter amount...' class='amountInput' />
+                  </div>
 
-                <p class='remainingBalance'>
-                  Remaining balance: {category.totalBudget}
-                </p>
-              </div>
-            ))}
-          </section>
-          {/* <section class='mainSection'>
+                  <p class='remainingBalance'>
+                    Remaining balance: {category.totalBudget}
+                  </p>
+                </div>
+              ))}
+            </section> */}
+          {/* </section> */}
+          <section class='mainSection'>
             <div class='mainSectionDiv'>
               <h1 class='myBudge'>My Budge</h1>
               <h2 class='leftMoney'>Money I have left this month</h2>
-              <input placeholder='$--'></input>
+              <div class='moneyLeftDiv'>
+                <p class='moneyLeftP'>$--</p>
+              </div>
             </div>
-            {/* closes div.mainSectionDiv */}
-          {/* Bar graph */}
-          {/* <div class='barGraph'>
+
+            <div class='barGraph'>
               <Bar
                 data={{
                   labels: ['Groceries', 'Rent', 'Car', 'Phone'],
@@ -197,13 +203,11 @@ function budgeSection() {
                 }}
               />
             </div>
-            {/* closes div.barGraph */}
-          {/* </section> */}
-          {/* closes section.mainSection*/}
+          </section>
         </div>
       </section>
     </Container>
   );
 }
 
-export default budgeSection;
+export default BudgeSection;
