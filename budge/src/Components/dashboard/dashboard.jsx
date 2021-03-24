@@ -33,10 +33,24 @@ function Dashboard() {
         <div class='bottomMainDiv'>
           <div class='mainTopDiv'>
             <div class='separatorDiv'>
-              <button class='separator1' onClick={handleBudge}>
+              <button
+                class='separator1'
+                onClick={handleBudge}
+                style={{
+                  backgroundColor: dailySpend ? '#d9eaff' : '#2a7de1',
+                  color: dailySpend ? '#2a7de1' : '#d9eaff',
+                }}
+              >
                 <p class='separatorText'>Budge</p>
               </button>
-              <button class='separator2' onClick={handleDailySpend}>
+              <button
+                class='separator2'
+                onClick={handleDailySpend}
+                style={{
+                  backgroundColor: dailySpend ? '#2a7de1' : '#d9eaff',
+                  color: dailySpend ? '#d9eaff' : '#2a7de1',
+                }}
+              >
                 <p class='separatorText'>Daily Spend</p>
               </button>
             </div>
