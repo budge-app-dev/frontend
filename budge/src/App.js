@@ -1,7 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import Dashboard from './Components/dashboard/Dashboard';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Dashboard from './Components/dashboard/dashboard';
 //Components
 import Login from './Components/Login';
 import Categories from './Components/setup/categories';

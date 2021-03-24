@@ -2,49 +2,6 @@ import React from 'react';
 import { Container } from './styles/budgeSection';
 import { Bar } from 'react-chartjs-2';
 
-const dummyCategories = [
-  {
-    category_id: 1,
-    category: 'Groceries',
-    totalBudget: 100,
-  },
-  {
-    category_id: 2,
-    category: 'Going out',
-    totalBudget: 100,
-  },
-  {
-    category_id: 3,
-    category: 'Rent',
-    totalBudget: 100,
-  },
-  {
-    category_id: 4,
-    category: 'Car',
-    totalBudget: 100,
-  },
-  {
-    category_id: 5,
-    category: 'Food',
-    totalBudget: 100,
-  },
-  {
-    category_id: 6,
-    category: 'investments',
-    totalBudget: 100,
-  },
-  {
-    category_id: 7,
-    category: 'savings',
-    totalBudget: 100,
-  },
-  {
-    category_id: 8,
-    category: 'cleaning',
-    totalBudget: 100,
-  },
-];
-
 function BudgeSection() {
   return (
     <Container>

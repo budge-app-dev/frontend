@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar';
-import BudgeSection from './BudgeSection';
+import NavBar from './navBar';
+import BudgeSection from './budgeSection';
 import { Container } from './styles/dashboard';
-import DailySpendSection from './DailySpendSection';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import DailySpendSection from './dailySpendSection';
 
 function Dashboard() {
   const [dailySpend, setDailySpend] = useState(false);
