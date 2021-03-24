@@ -55,7 +55,6 @@ function Dashboard() {
               </button>
             </div>
           </div>
-
           {dailySpend ? <DailySpendSection /> : <BudgeSection />}
         </div>
       </div>
