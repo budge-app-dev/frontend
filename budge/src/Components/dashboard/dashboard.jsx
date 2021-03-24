@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavBar from './navBar';
 import BudgeSection from './budgeSection';
 import { Container } from './styles/dashboard';
-import DailySpendSection from './dailySpendSection';
+import DailySpendSection from './DailySpendSection';
 
 function Dashboard() {
   const [dailySpend, setDailySpend] = useState(false);
