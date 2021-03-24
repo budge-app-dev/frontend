@@ -1,13 +1,65 @@
-import React from 'react';
-import NavBar from './navBar';
-import BudgeSection from './budgeSection';
+import React, { useState } from 'react';
+import NavBar from './NavBar';
+import BudgeSection from './BudgeSection';
+import { Container } from './styles/dashboard';
+import DailySpendSection from './DailySpendSection';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function Dashboard() {
+  const [dailySpend, setDailySpend] = useState(false);
+
+  const handleDailySpend = () => {
+    setDailySpend(true);
+  };
+
+  const handleBudge = () => {
+    setDailySpend(false);
+  };
   return (
-    <div>
+    <Container>
       <NavBar />
-      <BudgeSection />
-    </div>
+      <div class='mainDiv'>
+        <section class='leftSideSection'>
+          <div class='leftSideDiv'>
+            <h2 class='welcomeMessage'>Welcome Bob</h2>
+            <div class='logoutDiv'>
+              <a href='www.facebook.com' alt='' class='logout'>
+                Log Out
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <div class='bottomMainDiv'>
+          <div class='mainTopDiv'>
+            <div class='separatorDiv'>
+              <button
+                class='separator1'
+                onClick={handleBudge}
+                style={{
+                  backgroundColor: dailySpend ? '#d9eaff' : '#2a7de1',
+                  color: dailySpend ? '#2a7de1' : '#d9eaff',
+                }}
+              >
+                <p class='separatorText'>Budge</p>
+              </button>
+              <button
+                class='separator2'
+                onClick={handleDailySpend}
+                style={{
+                  backgroundColor: dailySpend ? '#2a7de1' : '#d9eaff',
+                  color: dailySpend ? '#d9eaff' : '#2a7de1',
+                }}
+              >
+                <p class='separatorText'>Daily Spend</p>
+              </button>
+            </div>
+          </div>
+
+          {dailySpend ? <DailySpendSection /> : <BudgeSection />}
+        </div>
+      </div>
+    </Container>
   );
 }
 
