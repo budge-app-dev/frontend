@@ -5,13 +5,16 @@ const initCategoryBudge= {
     budget: null,
 }
 export default function SetBudgeCategory(props) {
-    const {category} = props
+    const {category, monthlyBudge, handleBtnClick, setMonthlyBudge} = props
 
     const [categoryBudge, setBudgeCategory] = useState(initCategoryBudge);
 
     const handleChange = (e) => {
         setBudgeCategory({...categoryBudge, [e.target.name]:e.target.value})
-    }
+        //The below doesn't work - need to subtract total input value for each category. 
+        setMonthlyBudge(monthlyBudge-e.target.value)
+        }
+    
     return (
         <div>
             <h2>{category}</h2>

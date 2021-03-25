@@ -14,8 +14,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/setBudge" component={SetBudge}/>
-          <Route path="/income" component={IncomePage}/>
+          <Route path="/setBudge/:id" component={SetBudge}/>
+          <Route path="/income/:id" component={IncomePage}/>
           <Route path="/register" component={Register}/>
           <Route path="/categories" component={Categories}/>
           <Route path="/login" component={Login} />
