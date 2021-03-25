@@ -5,6 +5,8 @@ import Dashboard from './Components/dashboard/dashboard';
 import Login from './Components/Login';
 import Categories from './Components/setup/categories';
 import Register from './Components/Register'
+import LandingPage from './Components/LandingPage';
+import IncomePage from './Components/IncomePage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path='/login' component={Login} />
           <Route path='/dashboard' component={Dashboard} />
           <Route path='/register' component={Register}/>
+          <Route path='/landingPage' component={LandingPage}/>
+          <Route path='/incomePage' component={IncomePage}/>
           <Route path='/' component={Categories} />
         </Switch>
       </Router>
