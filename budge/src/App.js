@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './Components/dashboard/dashboard';
 //Components
 import Login from './Components/Login';
-import Categories from './Components/setup/categories';
+import UserCategories from './Components/setup/user-categories'
 import Register from './Components/Register'
 import LandingPage from './Components/LandingPage';
 import IncomePage from './Components/IncomePage';
@@ -20,7 +20,7 @@ function App() {
           <Route path='/landingPage' component={LandingPage}/>
           <Route path='/setBudge' component={SetBudge}/>
           <Route path='/incomePage' component={IncomePage}/>
-          <Route path='/' component={Categories} />
+          <Route path='/' component={UserCategories}/>
         </Switch>
       </Router>
     </div>

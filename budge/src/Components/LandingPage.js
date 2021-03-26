@@ -1,7 +1,7 @@
 import React from 'react'
 import MoneyTree from '../images/MoneyTree2.png'
 import styled from 'styled-components'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 export default function LandingPage() {
